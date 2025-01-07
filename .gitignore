@@ -1,3 +1,10 @@
+#ignore vendor static files folder
+src/staticfiles/vendors
+
+#ignore local static files
+#or "local-cdn"
+local-cdn/
+
 .DS_Store
 raw.txt
 venv/
