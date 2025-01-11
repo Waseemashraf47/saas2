@@ -83,6 +83,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.github',
     "widget_tweaks",
     "slippers",
 
@@ -172,7 +173,13 @@ AUTHENTICATION_BACKENDS = [
     # ...
 ]
 
-SOCIALACCOUNT_PROVIDERS = {}
+SOCIALACCOUNT_PROVIDERS = {
+    "github": {
+        "VERIFIED_EMAIL": True
+    }
+}
+# SOCIALACCOUNT_LOGIN_ON_GET=True
+# LOGIN_REDIRECT_URL = 'success'
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
