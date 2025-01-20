@@ -78,6 +78,7 @@ INSTALLED_APPS = [
     # My Apps
     "visits",
     "commando",
+    "profiles",
     #Third-party app
     "allauth_ui",
     'allauth',
