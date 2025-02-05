@@ -18,6 +18,16 @@ def profile_list_view(request):
 @login_required
 def profile_detail_view(request, username=None, *args, **kwargs):
     user = request.user
+    user_groups = user.groups.all()
+    print(
+        user.has_perm("subscriptions.basic"),
+        user.has_perm("subscriptions.pro"),
+        user.has_perm("subscriptions.advanced"),
+        )
+    # print("User_Groups", user_groups)
+    # if user_groups.filter(name__icontains='basic').exists():
+    #     return HttpResponse("CONGRATULATIONS")
+    
     # print(user.has_perm("Authentication and Authorization | user | Can view user"))
     # print('user.has_perm("auth.view_user")', user.has_perm("auth.view_user"))
     # print('user.has_perm("visits.view_pagevisit")', user.has_perm("visits.view_pagevisit"))
